@@ -4,12 +4,12 @@
   "manifest_version": 1,
   "description": "Игроки встают в очередь по горячей клавише, и все видят, кто за кем говорит.",
   "author": "Мастер",
-  "icon": "https://ВАШ_НИК.github.io/ИМЯ_РЕПОЗИТОРИЯ/icon.svg",
-  "background_url": "https://ВАШ_НИК.github.io/ИМЯ_РЕПОЗИТОРИЯ/background.html",
+  "icon": "https://psaa00.github.io/Treker-OWR/icon.svg",
+  "background_url": "https://psaa00.github.io/Treker-OWR/background.html",
   "action": {
     "title": "Очередь заявок",
-    "icon": "https://ВАШ_НИК.github.io/ИМЯ_РЕПОЗИТОРИЯ/icon.svg",
-    "popover": "https://ВАШ_НИК.github.io/ИМЯ_РЕПОЗИТОРИЯ/index.html",
+    "icon": "https://psaa00.github.io/Treker-OWR/icon.svg",
+    "popover": "https://psaa00.github.io/Treker-OWR/index.html",
     "width": 320,
     "height": 260
   }

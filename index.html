@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Очередь заявок</title>
+  <style>
+    :root {
+      --bg: #222639; --paper: #2c3047; --text: #fff; --text-2: rgba(255,255,255,.7);
+      --primary: #bb99ff; --primary-text: #000;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: transparent; color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; }
+    #app { padding: 12px; }
+    h1 { font-size: 15px; margin: 0 0 10px; font-weight: 600; }
+
+    #main-btn {
+      width: 100%; padding: 12px; border: 0; border-radius: 10px; cursor: pointer;
+      font-size: 15px; font-weight: 600; background: var(--primary); color: var(--primary-text);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    #main-btn.active { background: transparent; color: var(--text); box-shadow: inset 0 0 0 2px var(--primary); }
+    #main-btn:hover { filter: brightness(1.08); }
+    #main-btn:focus-visible, .done:focus-visible, #clear-btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+    #status { min-height: 18px; margin: 6px 2px 8px; color: var(--text-2); font-size: 13px; }
+
+    ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    li { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px;
+      background: var(--paper); min-height: 38px; }
+    li.first { box-shadow: inset 3px 0 0 var(--primary); }
+    li.me .name { font-weight: 700; }
+    .num { width: 20px; text-align: center; color: var(--text-2); font-variant-numeric: tabular-nums; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+    .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .done { border: 0; border-radius: 6px; width: 28px; height: 28px; cursor: pointer;
+      background: transparent; color: var(--text-2); font-size: 16px; }
+    .done:hover { background: rgba(127,127,127,.25); color: var(--text); }
+
+    #empty { color: var(--text-2); text-align: center; padding: 14px 0 6px; }
+    #gm-bar { margin-top: 10px; display: flex; justify-content: flex-end; }
+    #clear-btn { border: 0; background: transparent; color: var(--text-2); cursor: pointer;
+      font-size: 13px; padding: 6px 8px; border-radius: 6px; }
+    #clear-btn:hover { background: rgba(127,127,127,.25); color: var(--text); }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Очередь заявок</h1>
+    <button id="main-btn" type="button"><span aria-hidden="true">✋</span><span id="main-label">Встать в очередь</span></button>
+    <div id="status" aria-live="polite"></div>
+    <ol id="list"></ol>
+    <div id="empty">Пока никто не просит слова</div>
+    <div id="gm-bar" hidden><button id="clear-btn" type="button">Очистить очередь</button></div>
+  </div>
+  <script src="popover.bundle.js"></script>
+</body>
+</html>

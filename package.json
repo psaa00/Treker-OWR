@@ -1,0 +1,15 @@
+{
+  "name": "obr-hand-queue",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild background.js --bundle --minify --format=iife --outfile=background.bundle.js && esbuild popover.js --bundle --minify --format=iife --outfile=popover.bundle.js"
+  },
+  "dependencies": {
+    "@owlbear-rodeo/sdk": "^3.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
